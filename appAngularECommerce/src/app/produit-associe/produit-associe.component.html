@@ -1,0 +1,30 @@
+<h1>Produits associes a la categorie
+    <div class="col-lg-10">
+        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-box2-heart-fill" viewBox="0 0 16 16">
+            <path d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4h-8.5ZM8.5 4h6l.5.667V5H1v-.333L1.5 4h6V1h1v3ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+          </svg>
+    </div>
+</h1>
+
+<table class="center">
+	<tr>
+		<td style="background-color: oldlace">Id</td>
+		<td style="background-color: oldlace">Nom Produit</td>
+		<td style="background-color: oldlace">img</td>
+        <td style="background-color: oldlace">quantite</td>
+		
+		
+	</tr>
+    <tr *ngFor="let p of produits">
+            <td>{{p.libProduit}}</td>
+			<td>{{p.libProduit}}</td>
+            <td><img src="http://localhost:8080{{p.img}}" width="100px" height="100px"/></td>
+            <td [ngClass]="{quant:p.quantite===0, quant2: p.quantite>0, quant3:p.quantite>10}">{{p.quantite}}</td>
+            
+
+    </tr>
+    <tr class="class">aaa</tr>	
+</table>
+
+<button class="class1" (click)="afficherCategories()">Retour</button>
+<br>

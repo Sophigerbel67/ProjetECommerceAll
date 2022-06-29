@@ -1,0 +1,231 @@
+div
+{
+    text-align: right;
+}
+
+h1
+{
+    color: black;
+    text-align: center;
+    background-color: olive;
+    border: 4px solid black;
+    margin-left: -12px;
+    margin-right: -11px;
+    margin-top: -12px;
+}
+
+
+.a1
+{
+    display: block;
+    margin: auto;
+    text-align: center;
+
+}
+
+.class3
+{
+    text-align: center;
+}
+
+
+h1
+{
+    text-align: center;
+    color: black;
+
+}
+
+.class1
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    height: 30%;
+    background-color: olive;
+}
+
+.class2
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    height: 30%;
+    background-color: cornflowerblue;
+}
+
+.center 
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  height: 30%;
+  background-color: crimson;
+}
+
+.class3
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    height: 30%;
+    background-color: oldlace;
+}
+
+.circles 
+{
+    position: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+.circles li 
+{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: olive;
+    animation: animate 25s linear infinite;
+    bottom: 0;
+    border-radius: 100%;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.circles li:nth-child(1) 
+{
+    left: 25%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+    border-radius: 100%;
+    background: crimson;
+
+}
+
+
+.circles li:nth-child(2) 
+{
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+    border-radius: 100%;
+    background: crimson;
+}
+
+.circles li:nth-child(3) 
+{
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+    border-radius: 100%;
+    background: crimson;
+}
+
+.circles li:nth-child(4) 
+{
+    left: 40%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+    border-radius: 100%;
+}
+
+.circles li:nth-child(5) 
+{
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+    border-radius: 100%;
+}
+
+.circles li:nth-child(6) 
+{
+    left: 75%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 3s;
+    border-radius: 100%;
+}
+
+.circles li:nth-child(7) 
+{
+    left: 35%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 7s;
+    border-radius: 100%;
+}
+
+.circles li:nth-child(8) 
+{
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+    border-radius: 100%;
+    background: crimson;
+}
+
+.circles li:nth-child(9) 
+{
+    left: 20%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+    border-radius: 100%;
+}
+
+.circles li:nth-child(10) 
+{
+    left: 85%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+    border-radius: 100%;
+    background: crimson;
+}
+
+
+
+@keyframes animate 
+{
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 100%;
+    }
+
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 1;
+        border-radius: 100%;
+    }
+
+}
+
+div
+{
+    text-align: right;
+    margin-right: 5px;
+}

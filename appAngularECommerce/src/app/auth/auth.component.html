@@ -1,0 +1,195 @@
+<head>
+    <title>Site eCommerce</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+</head>
+            <nav class="navbar navbar-light">
+            <div class="container">
+
+     <!--Logo-->
+     <div class="col-lg-12"></div>
+     <a class="navbar-brand" href="#">
+        <img src="assets/images/logo.png" alt="" width="200" height="200">
+      </a>             
+
+      <!--Panier-->
+      <button class="class2" (click)=panier()>Mon panier</button>
+
+    <!--Login-->
+    <p *ngIf="invalidLogin">Error login and/or password</p>
+                    
+    <input type="text" name="username" placeholder="Username" class="class2" [(ngModel)]="username">
+    <input  type="password" name="password" placeholder="Password" class="class2"  [(ngModel)]="password">
+    <br>
+    <button class="class2" (click)=authentification()>Connexion</button>
+    <br>
+    </div>
+
+    <!--Inscription-->
+    <br>
+    <div>
+    <button class="btn btn-outline-warning btn-rounded" data-mdb-ripple-color="dark" type="submit" (click)=" inscription()">S'inscrire</button>
+    </div>
+
+ <!--Trouver un produit-->
+ 
+    <form class="form-search form-inline" (ngSubmit)="afficher2()">
+      <input type="text" class="search-query" placeholder="Trouver un produit" name="selectedP"
+      [(ngModel)]="selectedP" [(ngModel)]="filterTerm"/>
+ 
+      <button type="submit">Valider</button>
+    </form>
+   
+
+    <!--Carousel-->
+        <div class="col-lg-12">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+    
+                <ul class="carousel-indicators">
+                  <li data-target="#demo" data-slide-to="0" class="active"></li>
+                  <li data-target="#demo" data-slide-to="1"></li>
+                  <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+            
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="assets/images/livre2.jpg" class="theImage" alt="Carrousel slide 1" class="d-block w-100" alt="" width="100" height="100">
+                    <div class="carousel-caption d-none d-md-block"></div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/images/habits.jpg" class="theImage" alt="Carrousel slide 2" class="d-block w-100" alt="" width="100" height="100">
+                    <div class="carousel-caption d-none d-md-block text-dark"></div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/images/musique.jpg" class="theImage" alt="Carrousel slide 3" class="d-block w-100" alt="" width="100" height="250">
+                    <div class="carousel-caption d-none d-md-block"></div>
+                  </div>
+                </div>
+        
+                
+                <a class="carousel-control-prev" href="#demo" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only"></span>
+                </a>
+
+
+            </div>
+
+
+
+            <!--Section-->
+
+                <br>
+                <div class="isa_info">
+                  <i class="fa fa-info-circle"></i>
+                      Pour faire vos achats vous devez vous connectez
+                </div>
+
+                
+                    <!--Menus-->
+                    <br>
+                    <table class="center">
+                        <td *ngFor="let c of categories">
+                        <button   class="btn btn-outline-secondary" (click)=" afficher(c.idCategorie)"> {{c.nomCategorie}} </button>
+                        </td>    
+                    </table>
+                    <br>
+                    <br>
+                
+                   <p> Decouvrez nos produits !</p>
+                    <!--Produits-->
+                    <div>
+                    <table class="el">
+                      <td *ngFor="let p of produits | filter: filterTerm">
+                        <button (click)=" afficher2()" class="btn btn-outline-light">
+                          <img src="http://localhost:8080{{p.img}}"width="150px" height="150px"/>
+                          <h6>{{p.libProduit}}</h6>
+                        </button>
+
+
+                        
+                      
+                      </td>    
+                  </table>
+                </div>
+                
+
+              
+
+            <!--Description-->
+            <br>
+                <div class="row" >
+                <div class="col-lg-12">
+                    Plus de 1000 references sur notre site eCommerce ! Vous allez bien trouver votre bonheur !
+                    Bonne session shopping !
+            <br>
+            <br>
+            <br>
+            <br>
+                </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-credit-card-fill" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1H0V4zm0 3v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7H0zm3 2h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1z"/>
+                          </svg>
+                        <p>Paiement par carte bleue </p>
+                        
+                    </div>
+    
+                    <div class="col-lg-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box2-heart-fill" viewBox="0 0 16 16">
+                            <path d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4h-8.5ZM8.5 4h6l.5.667V5H1v-.333L1.5 4h6V1h1v3ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+                          </svg>
+                        <p>Frais de port offerts </p>
+                        
+                    </div>
+    
+                    <div class="col-lg-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+                            <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                          </svg>
+                        <p>Livraison partout en France </p>
+                        
+                    <br>
+                    <br>
+                    <br>
+                    </div>
+    
+                    </div>
+
+    <!--Footer-->
+
+        <div class="container p-4">
+          <div class="row">
+            <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+
+              <h6>Informations de la compagnie</h6>
+    
+              <p class="class4"> Ce site est un eCommerce. Vous pourrez y trouver tous
+               les produits dont vous avez besoin. </p>
+               <br>
+               
+               <h6>Nous contacter </h6>
+               <p>eCommerce@gmail.com</p>
+              </div>
+              <br>
+              <br>
+              </div>
+              
+              <div class="row1">
+                <div class="col-lg-12 col-md-0 mb-0 mb-md-0">
+                  <p class="row1"><strong>Made with love</strong>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-balloon-heart" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="m8 2.42-.717-.737c-1.13-1.161-3.243-.777-4.01.72-.35.685-.451 1.707.236 3.062C4.16 6.753 5.52 8.32 8 10.042c2.479-1.723 3.839-3.29 4.491-4.577.687-1.355.587-2.377.236-3.061-.767-1.498-2.88-1.882-4.01-.721L8 2.42Zm-.49 8.5c-10.78-7.44-3-13.155.359-10.063.045.041.089.084.132.129.043-.045.087-.088.132-.129 3.36-3.092 11.137 2.624.357 10.063l.235.468a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.235-.468ZM6.013 2.06c-.649-.18-1.483.083-1.85.798-.131.258-.245.689-.08 1.335.063.244.414.198.487-.043.21-.697.627-1.447 1.359-1.692.217-.073.304-.337.084-.398Z"/>
+                        </svg>
+              </p>
+ 

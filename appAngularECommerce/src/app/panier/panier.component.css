@@ -1,0 +1,34 @@
+
+h1
+{
+    color: black;
+    text-align: center;
+    background-color: crimson;
+    border: 4px solid black;
+    margin-left: -12px;
+    margin-right: -11px;
+    margin-top: -12px;
+}
+
+p
+{
+    text-align: center;
+}
+
+div
+{
+    text-align: right;
+    margin-right: 5px;
+}
+
+th, td 
+{
+ text-align: center;
+}
+
+.center
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+

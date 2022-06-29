@@ -1,0 +1,38 @@
+<h1>Liste des produits de l'ecommerce
+    <div class="col-lg-10">
+        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          </svg>
+    </div>
+</h1>
+
+
+    <table class="center">
+        <tr>
+            <td style="background-color: oldlace">Id</td>
+            <td style="background-color: oldlace">Nom</td>
+            <td style="background-color: oldlace">Image</td>
+            <td style="background-color: oldlace">Quantite</td>
+            <td style="background-color: oldlace">Action1</td>
+            <td style="background-color: oldlace">Action2</td>
+    
+        </tr>
+
+        <tr *ngFor="let p of produits">
+                <td>{{p.idProduit}}</td>
+                <td>{{p.libProduit}}</td>
+                <td><img src="http://localhost:8080{{p.img}}" width="100px" height="100px"/></td>
+                <td [ngClass]="{quant:p.quantite===0, quant2: p.quantite>0, quant3:p.quantite>10}">{{p.quantite}}</td>
+                <td><button (click)="modifier(p.idProduit)">Modifier</button></td>
+                <td><button (click)="supprimer(p.idProduit)">Supprimer</button></td>
+
+    
+        </tr>
+        
+        <tr class="class">aaa</tr>	
+    </table>
+    <hr>
+    <button class="class3"  (click)="AjouterProduit()">Ajouter un produit</button>
+    <br>
+    <br>  
+<a routerLink="">Retour</a>
